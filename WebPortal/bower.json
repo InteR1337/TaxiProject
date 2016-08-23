@@ -1,0 +1,15 @@
+{
+  "name": "WebPortal",
+  "homepage": "https://github.com/InteR1337/TaxiProject",
+  "description": "WebPortal for taxi project",
+  "main": "bower.json",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

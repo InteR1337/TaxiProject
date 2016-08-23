@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div data-ng-controller="TaxisController as taxisCtrl" data-ng-cloak>
+    <h1>All taxis</h1>
+    <button data-ng-click="showNewTaxiForm()">Create New Taxi</button>
+
+    <ul>
+        <li data-ng-repeat="taxi in taxis">
+            <label>Id:</label>
+            <a href="#" data-ng-click="selectTaxi(taxi)">{{taxi.Id}}</a>
+            <label>Car brand:</label>
+            <span>{{taxi.CarBrand}}</span>
+            <label>Car model:</label>
+            <span>{{taxi.CarModel}}</span>
+        </li>
+    </ul>
+
+    <div data-ng-show="taxi">
+        <hr style="width: 100%; height: 2px; background-color: grey;" />
+
+        <label>Car brand:</label>
+        <span>{{taxi.CarBrand}}</span>
+        <label>Car model:</label>
+        <span>{{taxi.CarModel}}</span>
+        <label>Passenger Seats:</label>
+        <span>{{taxi.PassengerSeats}}</span>
+        <label>Used since:</label>
+        <span>{{taxi.UsedFrom | toLocaleDate}}</span>
+    </div>
+
+    <div data-ng-show="newTaxi">
+        <form data-ng-submit="submitNewTaxi()">
+            <label>Car brand:</label>
+            <input type="text" name="car_brand" data-ng-model="newTaxi.carBrand" />
+            <label>Car model:</label>
+            <input type="text" name="car_model" data-ng-model="newTaxi.carModel" />
+            <label>Passenger Seats:</label>
+            <input type="text" name="pass_seats" data-ng-model="newTaxi.passSeats" />
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
