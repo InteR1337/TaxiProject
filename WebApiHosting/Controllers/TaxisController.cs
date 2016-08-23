@@ -15,12 +15,7 @@ namespace WebApiHosting.Controllers
     public class TaxisController : ApiController
     {
         private IRepository<Taxi> _taxiRepo;
-
-        public TaxisController()
-        {
-            this._taxiRepo = new TaxiRepository(new MongoContext());
-        }
-
+        
         public TaxisController(IRepository<Taxi> repo)
         {
             this._taxiRepo = repo;
